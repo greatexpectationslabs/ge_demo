@@ -1,0 +1,169 @@
+{
+  "data_asset_type": "Dataset",
+  "expectation_suite_name": "bikedata.simple",
+  "expectations": [
+    {
+      "expectation_type": "expect_table_row_count_to_be_between",
+      "kwargs": {
+        "max_value": 31,
+        "min_value": 28
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_table_columns_to_match_ordered_list",
+      "kwargs": {
+        "column_list": [
+          "Date",
+          "Day",
+          "High_Temp",
+          "Low_Temp",
+          "Precipitation",
+          "Brooklyn_Bridge",
+          "Manhattan_Bridge",
+          "Williamsburg_Bridge",
+          "Queensboro_Bridge",
+          "Total"
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "High_Temp"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "High_Temp",
+        "max_value": 100,
+        "min_value": 0
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "Low_Temp"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "Low_Temp",
+        "max_value": 100,
+        "min_value": 0
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "Date"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_in_set",
+      "kwargs": {
+        "column": "Day",
+        "value_set": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "Brooklyn_Bridge",
+        "max_value": 10000,
+        "min_value": 500
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_unique",
+      "kwargs": {
+        "column": "Date"
+      },
+      "meta": {}
+    }
+  ],
+  "meta": {
+    "BasicSuiteBuilderProfiler": {
+      "batch_kwargs": {
+        "data_asset_name": "nycdot_bicycle_2016_05",
+        "datasource": "data__dir",
+        "path": "/Users/sam/code/ge_demo/great_expectations/../data/nycdot_bicycle_2016_05.csv"
+      },
+      "created_at": 1595512391.613333,
+      "created_by": "BasicSuiteBuilderProfiler"
+    },
+    "citations": [
+      {
+        "batch_kwargs": {
+          "data_asset_name": "nycdot_bicycle_2016_05",
+          "datasource": "data__dir",
+          "path": "/Users/sam/code/ge_demo/great_expectations/../data/nycdot_bicycle_2016_05.csv"
+        },
+        "batch_markers": {
+          "ge_load_time": "20200723T135311.539930Z",
+          "pandas_data_fingerprint": "12dcf0c81f3fdcd0a85f19c9bc450273"
+        },
+        "batch_parameters": null,
+        "citation_date": "20200723T135311.630550Z",
+        "comment": "BasicSuiteBuilderProfiler added a citation based on the current batch."
+      }
+    ],
+    "columns": {
+      "Brooklyn_Bridge": {
+        "description": ""
+      },
+      "Date": {
+        "description": ""
+      },
+      "Day": {
+        "description": ""
+      },
+      "High_Temp": {
+        "description": ""
+      },
+      "Low_Temp": {
+        "description": ""
+      },
+      "Manhattan_Bridge": {
+        "description": ""
+      },
+      "Precipitation": {
+        "description": ""
+      },
+      "Queensboro_Bridge": {
+        "description": ""
+      },
+      "Total": {
+        "description": ""
+      },
+      "Williamsburg_Bridge": {
+        "description": ""
+      }
+    },
+    "great_expectations.__version__": "0.11.8+4.g2a30c48c",
+    "notes": {
+      "content": [
+        "#### This is an _example_ suite\n\n- This suite was made by quickly glancing at 1000 rows of your data.\n- This is **not a production suite**. It is meant to show examples of expectations.\n- Because this suite was auto-generated using a very basic profiler that does not know your data like you do, many of the expectations may not be meaningful.\n"
+      ],
+      "format": "markdown"
+    }
+  }
+}
