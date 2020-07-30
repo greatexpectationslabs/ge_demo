@@ -14,9 +14,9 @@ validation_operator_name: action_list_operator
 # Great Expectations in your pipelines easy!
 batches:
   - batch_kwargs:
-      table: yellow_tripdata_latest
+      table: yellow_tripdata_staging
       schema: public
-      data_asset_name: yellow_tripdata_latest
+      data_asset_name: yellow_tripdata_staging
       datasource: my_postgres_db
     expectation_suite_names: # one or more suites may validate against a single batch
       - taxi.demo

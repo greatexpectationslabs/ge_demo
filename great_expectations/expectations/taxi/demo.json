@@ -3,6 +3,22 @@
   "expectation_suite_name": "taxi.demo",
   "expectations": [
     {
+      "expectation_type": "expect_column_mean_to_be_between",
+      "kwargs": {
+        "column": "fare_amount",
+        "max_value": 20,
+        "min_value": 5
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "fare_amount"
+      },
+      "meta": {}
+    },
+    {
       "expectation_type": "expect_column_values_to_be_between",
       "kwargs": {
         "column": "passenger_count",
@@ -41,6 +57,13 @@
       "expectation_type": "expect_column_values_to_not_be_null",
       "kwargs": {
         "column": "pickup_datetime"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "dropoff_datetime"
       },
       "meta": {}
     }

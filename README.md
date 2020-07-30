@@ -2,53 +2,23 @@
 
 Simple demo of Great Expectations with data + an expectation suite
 
-## This is our dataset (Titanic with some modifications)
-![screenshot](img/screenshot_data.png)
+## The data
 
+The CSV files in the data directory have been downloaded from the NYC taxi data website:
+* Data: https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page
+* Data dictionary: https://www1.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_yellow.pdf
 
-## Running `great_expectations init`
-![screenshot](img/ge_init.png)
+We created 10,000 row samples from those files for convenience and loaded them to a Postgres database to access them in this demo.
 
+## Slides instructions
+We check in the generated HTML for these slides, so the HTML in the repo should be up-to-date. If you want to make changes to the slides and recompile them, follow the instructions below.
 
-## The great_expectations directory structure
-![screenshot](img/ge_directory.png)
+### Installing Marp
+* Install npm: https://www.npmjs.com/get-npm
+* Allow global install of npm modules: `sudo mkdir /usr/local/lib/node_modules; chown -R `whoami` /usr/local/lib/node_modules` 
+* Install marp CLI: `npm install -g @marp-team/marp-cli`
+* This seems to be the most helpful documentation: https://marpit.marp.app/
 
-
-## Running `great_expectations datasource new`
-![screenshot](img/ge_datasource.png)
-
-
-## Supported types of datasources
-![screenshot](img/docs_datasources.png)
-
-
-## The glossary of built-in Expectations
-
-###Table expectations
-![screenshot](img/ge_glossary1.png)
-
-### Column expectations
-![screenshot](img/ge_glossary2.png)
-
-
-## Scaffolder and profiling
-
-### Notebook created with `suite scaffold`
-![screenshot](img/ge_scaffold.png)
-
-### Output of scaffolding
-
-![screenshot](img/ge_scaffolded_suite.png)
-
-## Stores
-![screenshot](img/ge_stores.png)
-
-
-## Slack notifications
-
-### Slack hook configuration as "validation action"
-![screenshot](img/ge_slackhook.png)
-
-### Slack notification in action
-
-![screenshot](img/ge_slack.png)
+### Compiling markdown to HTML
+* Compile markdowns: `marp *.md --theme theme.css` then open the HTML output in a browser window. Each change requires re-compiling and refreshing the browser. The `theme` flag is needed to compile with the custom CSS.
+* You can also run these in "watch" mode which will keep a compile server running and refresh the browser window for both markdown and CSS changes (pretty cool): `marp *.md --theme theme.css --watch`
