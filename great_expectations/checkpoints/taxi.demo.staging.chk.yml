@@ -14,8 +14,9 @@ validation_operator_name: action_list_operator
 # Great Expectations in your pipelines easy!
 batches:
   - batch_kwargs:
-      path: /Users/sam/code/ge_demo/great_expectations/../data/titanic_ge_demo.csv
-      datasource: data__dir
-      data_asset_name: titanic_ge_demo
+      table: yellow_tripdata_staging
+      schema: public
+      data_asset_name: yellow_tripdata_staging
+      datasource: my_postgres_db
     expectation_suite_names: # one or more suites may validate against a single batch
-      - titanic.simple
+      - taxi.demo
