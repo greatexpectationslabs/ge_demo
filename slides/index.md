@@ -45,9 +45,10 @@ marp: true
 ## Who are we?
 
 - We're **Superconductive**, the company behind Great Expectations
-- Sam Bail (@spbail): technical lead of the Partnerships team at Superconductive
-- James Campbell (@jpcampbell42): CTO of Superconductive and key contributor to Great Expectations
-- Kyle Eaton (@SuperCoKyle): UX, Growth, Marketing, DevRels, community manager...
+- Today's team:
+    - Sam Bail (@spbail): technical lead of the Partnerships team at Superconductive
+    - James Campbell (@jpcampbell42): CTO of Superconductive and key contributor to Great Expectations
+    - Kyle Eaton (@SuperCoKyle): UX, Growth, Marketing, DevRels, community manager...
 
 
 ---
