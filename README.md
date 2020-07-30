@@ -1,16 +1,50 @@
-# ge_demo
+# Great Expectations 101: Getting started
 
-Simple demo of Great Expectations with data + an expectation suite
+This repo contains materials for a simple demo of Great Expectations with data and an expectation suite. It was created by Sam Bail at Superconductive in July 2020. 
 
-## The data
+**Note**: This setup will soon be replaced by a Docker container that has all the relevant
 
-The CSV files in the data directory have been downloaded from the NYC taxi data website:
+
+## The `data` directory
+
+### About the NYC taxi data
+
+The CSV files in the data directory are yellow taxi trip data that have been downloaded from the NYC taxi data website:
 * Data: https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page
 * Data dictionary: https://www1.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_yellow.pdf
 
-We created 10,000 row samples from those files for convenience and loaded them to a Postgres database to access them in this demo.
+We created 10,000 row samples (using the pandas sample function) from original CSV files for convenience and manually added some breaking changes (0s in the passenger_count column) to demonstrate potential data issues. 
 
-## Slides instructions
+In a future version of this tutorial, we might use "naturally occurring" data bugs :)
+
+### About the load script
+The SQL load script is a simple script to load the provided data tables to a postgres database. They're provided for convenience, you can also use a different backend and your own method to make the data available for this demo.
+
+### About the analysis
+This is a very simple Jupyter notebook that creates histograms of the passenger count variable in the data. We created this for the purpose of this demo.
+
+
+## The `great_expectations` directory
+Currently, this demo contains the following:
+* A single expectation suite, taxi.demo, containing a handful of simple expectations
+    * The expectation suite will pass when run against the January data, and fail when run against the February data in the staging table (due to the messy data we introduced)
+* A checkpoint taxi.demo.staging.chk that is set up to run the suite against the staging table
+
+### Setting up `my_postgres_db`
+
+In order to access the data, we need to add the credentials to the DB where we loaded the data into `great_expectations/uncommitted/config_variables.yml`:
+
+```
+my_postgres_db:
+  drivername: postgresql
+  host: ...
+  port: '5432'
+  username: ...
+  password: ...
+  database: ...
+```
+
+## The `slides` directory
 We check in the generated HTML for these slides, so the HTML in the repo should be up-to-date. If you want to make changes to the slides and recompile them, follow the instructions below.
 
 ### Installing Marp

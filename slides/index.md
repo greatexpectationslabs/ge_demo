@@ -39,6 +39,7 @@ marp: true
 - We might answer some more in-depth questions via Slack after the webinar!
 - We're recording the webinar and content will be made available after
 - Our community Code of Conduct also applies to our webinars
+- **Please fill in the survey (posted in the Zoom chat) after the session**!
 
 ---
 
@@ -164,6 +165,7 @@ How can we test the monthly update before it gets to the dashboard?
     - Check out the docs: link on **greatexpectations.io**
     - Join our Slack channel: link on **greatexpectations.io**
     - Star us on GitHub: link on **greatexpectations.io**
+- **Please fill in the survey (posted in the Zoom chat) after the session**!
 - **We offer partnerships and consulting services: DM us in Slack!**
 
 ![width:220px](../img/generic_dickens_protagonist.png)
