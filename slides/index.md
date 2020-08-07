@@ -47,10 +47,8 @@ marp: true
 
 - We're **Superconductive**, the company behind Great Expectations
 - Today's team:
-    - Sam Bail (@spbail): technical lead of the Partnerships team at Superconductive
-    - James Campbell (@jpcampbell42): CTO of Superconductive and key contributor to Great Expectations
-    - Kyle Eaton (@SuperCoKyle): UX, Growth, Marketing, DevRels, community manager...
-
+    - Sam Bail (@spbail): Technical Lead of the Partnerships team at Superconductive
+    - Eugene Mandel (@eugmandel): Head of Product at Superconductive
 
 ---
 
@@ -66,7 +64,7 @@ Let's assume we have an analytics pipeline tracking NYC taxi data...
 
 Based on our data, we expect between 1 and 6 passengers per ride
 
-![width:800px](../img/passengers1.png)
+![width:500px](../img/passengers1.png)
 
 ---
 
@@ -74,7 +72,7 @@ Based on our data, we expect between 1 and 6 passengers per ride
 
 Something happened this month - we didn't expect 0 passengers?
 
-![width:800px](../img/passengers2.png)
+![width:500px](../img/passengers2.png)
 
 
 ---
@@ -117,15 +115,25 @@ How can we test the monthly update before it gets to the dashboard?
 
 ## What does a typical GE workflow look like?
  
-1. Create your expectation suites using the knowledge and data you have
+1. Create your expectation suites using the **knowledge** and **data** you have
     a. These are intended to be version controlled
-2. Whenever your data changes (new batch is ingested, pipelines are modified...), validate with the expectation suites
-3. Make your pipelines react to validation results, e.g.
+    b. We're working on automatically *"scaffolding"* expectations
+2. Whenever your data changes (new batch is ingested, pipelines are modified...), **validate** with the expectation suites
+3. Make your pipelines **react** to validation results, e.g.
     a. Halt the pipeline execution and notify stakeholders
     b. Continue the pipeline execution and log results
     
 
 ---
+
+
+## GE in a real-world pipeline
+ 
+![width:1100px](../img/ge_architecture.png)
+
+
+---
+
 
 
 ![bg right:30% 80%](../img/generic_dickens_protagonist.png)
@@ -153,7 +161,7 @@ How can we test the monthly update before it gets to the dashboard?
     - How to create and edit Expectation Suites
     - How to validate your data
     - Additional features of Great Expectations
-- Next up: Q&A - please post your questions in the chat!
+- Next up: Q&A - **please post your questions in the chat!**
 
 
 ---
@@ -166,6 +174,6 @@ How can we test the monthly update before it gets to the dashboard?
     - Join our Slack channel: link on **greatexpectations.io**
     - Star us on GitHub: link on **greatexpectations.io**
 - **Please fill in the survey (posted in the Zoom chat) after the session**!
-- **We offer partnerships and consulting services: DM us in Slack!**
+- **We offer partnerships & consulting services: superconductive.com** 
 
 ![width:220px](../img/generic_dickens_protagonist.png)
