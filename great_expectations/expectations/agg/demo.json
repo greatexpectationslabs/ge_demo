@@ -1,0 +1,23 @@
+{
+  "data_asset_type": null,
+  "expectation_suite_name": "agg.demo",
+  "expectations": [],
+  "meta": {
+    "citations": [
+      {
+        "batch_kwargs": {
+          "data_asset_name": "location_frequency",
+          "datasource": "my_postgres_db",
+          "limit": 1000,
+          "schema": "public",
+          "table": "location_frequency"
+        },
+        "batch_markers": null,
+        "batch_parameters": null,
+        "citation_date": "20200902T230458.864686Z",
+        "comment": "New suite added via CLI"
+      }
+    ],
+    "great_expectations_version": "0.12.1"
+  }
+}

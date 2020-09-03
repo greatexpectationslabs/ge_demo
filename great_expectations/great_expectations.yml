@@ -15,22 +15,22 @@ config_version: 2.0
 # add a new datasource. Read more at https://docs.greatexpectations.io/en/latest/features/datasource.html
 datasources:
   data__dir:
-    module_name: great_expectations.datasource
-    data_asset_type:
-      class_name: PandasDataset
-      module_name: great_expectations.dataset
     class_name: PandasDatasource
+    module_name: great_expectations.datasource
     batch_kwargs_generators:
       subdir_reader:
         class_name: SubdirReaderBatchKwargsGenerator
         base_directory: ../data
+    data_asset_type:
+      module_name: great_expectations.dataset
+      class_name: PandasDataset
   my_postgres_db:
+    class_name: SqlAlchemyDatasource
     credentials: ${my_postgres_db}
     module_name: great_expectations.datasource
     data_asset_type:
-      class_name: SqlAlchemyDataset
       module_name: great_expectations.dataset
-    class_name: SqlAlchemyDatasource
+      class_name: SqlAlchemyDataset
 config_variables_file_path: uncommitted/config_variables.yml
 
 # The plugins_directory will be added to your python path for custom modules
@@ -56,15 +56,15 @@ validation_operators:
     - name: update_data_docs
       action:
         class_name: UpdateDataDocsAction
-    - name: send_slack_notification_on_validation_result # name can be set to any value
-      action:
-        class_name: SlackNotificationAction
-        # put the actual webhook URL in the uncommitted/config_variables.yml file
-        slack_webhook: ${slack_webhook}
-        notify_on: all # possible values: "all", "failure", "success"
-        renderer:
-          module_name: great_expectations.render.renderer.slack_renderer
-          class_name: SlackRenderer
+#    - name: send_slack_notification_on_validation_result # name can be set to any value
+#      action:
+#        class_name: SlackNotificationAction
+#        # put the actual webhook URL in the uncommitted/config_variables.yml file
+#        slack_webhook: ${slack_webhook}
+#        notify_on: all # possible values: "all", "failure", "success"
+#        renderer:
+#          module_name: great_expectations.render.renderer.slack_renderer
+#          class_name: SlackRenderer
 
 stores:
 # Stores are configurable places to store things like Expectations, Validations
@@ -111,6 +111,6 @@ data_docs_sites:
       class_name: DefaultSiteIndexBuilder
 
 anonymous_usage_statistics:
-  enabled: true
   data_context_id: 349a4d24-a684-4258-aefe-fe93823cd473
+  enabled: true
 notebooks:
