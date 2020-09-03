@@ -24,7 +24,7 @@ jobs:
         DB_USER: ${{ secrets.DB_USER }} 
     
     # If a checkpoint failed, comment on the PR with a link to the Data Docs hosted on Netlify.
-    - name: Comment on PR Upon Checkpoint Failure
+    - name: Comment on PR upon Checkpoint failure
       if: steps.ge.outputs.checkpoint_failure_flag == '1'
       uses: actions/github-script@v2
       with:
@@ -34,7 +34,7 @@ jobs:
             issue_number: context.issue.number,
             owner: context.repo.owner,
             repo: context.repo.repo,
-            body: `Failed Great Expectations checkpoint(s) \`${FAILED_CHECKPOIINTS}\` detected for: ${process.env.GITHUB_SHA}.  Corresponding Data Docs have been generated and can be viewed [here](${process.env.URL}).`
+            body: `Failed Great Expectations Checkpoint(s) \`${FAILED_CHECKPOIINTS}\` detected for: ${process.env.GITHUB_SHA}.  Corresponding Data Docs have been generated and can be viewed [here](${process.env.URL}).`
             })
       env:
         URL: ${{ steps.ge.outputs.docs_url }}

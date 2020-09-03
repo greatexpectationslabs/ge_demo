@@ -24,13 +24,13 @@ datasources:
       module_name: great_expectations.dataset
       class_name: PandasDataset
     class_name: PandasDatasource
-  my_postgres_db:
-    module_name: great_expectations.datasource
-    credentials: ${my_postgres_db}
-    data_asset_type:
-      module_name: great_expectations.dataset
-      class_name: SqlAlchemyDataset
-    class_name: SqlAlchemyDatasource
+    #   my_postgres_db:
+    #     module_name: great_expectations.datasource
+    #     credentials: ${my_postgres_db}
+    #     data_asset_type:
+    #       module_name: great_expectations.dataset
+    #       class_name: SqlAlchemyDataset
+    #     class_name: SqlAlchemyDatasource
   rds_postgres_db:
     module_name: great_expectations.datasource
     credentials:
