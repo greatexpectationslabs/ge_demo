@@ -19,6 +19,9 @@ jobs:
         CHECKPOINTS: "locations.chk"
         NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        DB_HOST: ${{ secrets.DB_HOST }}
+        DB_PASS: ${{ secrets.DB_PASS }}
+        DB_USER: ${{ secrets.DB_USER }} 
     
     # If a checkpoint failed, comment on the PR with a link to the Data Docs hosted on Netlify.
     - name: Comment on PR Upon Checkpoint Failure
