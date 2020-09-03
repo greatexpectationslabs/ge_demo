@@ -14,7 +14,7 @@ jobs:
       # Run Great Expectations and deploy Data Docs to Netlify
     - name: Run Great Expectation Checkpoints
       uses: superconductive/great_expectations_action@main
-      continue-on-error: false  # TODO set back to true
+      continue-on-error: true
       with:
         CHECKPOINTS: "locations.rds.chk"
         NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
@@ -26,7 +26,7 @@ jobs:
     
     # If a checkpoint failed, comment on the PR with a link to the Data Docs hosted on Netlify.
     - name: Comment on PR upon Checkpoint failure
-      if: steps.ge.outputs.checkpoint_failure_flag == '1'
+      #      if: steps.ge.outputs.checkpoint_failure_flag == '1'
       uses: actions/github-script@v2
       with:
         github-token: ${{secrets.GITHUB_TOKEN}}
