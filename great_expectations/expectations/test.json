@@ -1,0 +1,276 @@
+{
+  "data_asset_type": "Dataset",
+  "expectation_suite_name": "test",
+  "expectations": [
+    {
+      "expectation_type": "expect_table_row_count_to_be_between",
+      "kwargs": {
+        "max_value": 51,
+        "min_value": 42
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_table_column_count_to_equal",
+      "kwargs": {
+        "value": 3
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_table_columns_to_match_ordered_list",
+      "kwargs": {
+        "column_list": [
+          "pickup_location",
+          "dropoff_location",
+          "num_rides"
+        ]
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_unique",
+      "kwargs": {
+        "column": "pickup_location"
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "pickup_location"
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_value_lengths_to_be_between",
+      "kwargs": {
+        "column": "pickup_location",
+        "min_value": 1
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_unique",
+      "kwargs": {
+        "column": "dropoff_location"
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "dropoff_location",
+        "mostly": 0.794
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_value_lengths_to_be_between",
+      "kwargs": {
+        "column": "dropoff_location",
+        "min_value": 1
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_unique",
+      "kwargs": {
+        "column": "num_rides"
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "num_rides"
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_min_to_be_between",
+      "kwargs": {
+        "column": "num_rides",
+        "max_value": 2,
+        "min_value": 0
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_max_to_be_between",
+      "kwargs": {
+        "column": "num_rides",
+        "max_value": 36226,
+        "min_value": 36224
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_mean_to_be_between",
+      "kwargs": {
+        "column": "num_rides",
+        "max_value": 4572.574468085107,
+        "min_value": 4570.574468085107
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_median_to_be_between",
+      "kwargs": {
+        "column": "num_rides",
+        "max_value": 395,
+        "min_value": 393
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_quantile_values_to_be_between",
+      "kwargs": {
+        "allow_relative_error": true,
+        "column": "num_rides",
+        "quantile_ranges": {
+          "quantiles": [
+            0.05,
+            0.25,
+            0.5,
+            0.75,
+            0.95
+          ],
+          "value_ranges": [
+            [
+              2,
+              4
+            ],
+            [
+              59,
+              61
+            ],
+            [
+              393,
+              395
+            ],
+            [
+              2345,
+              2347
+            ],
+            [
+              32024,
+              32026
+            ]
+          ]
+        }
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    }
+  ],
+  "meta": {
+    "BasicSuiteBuilderProfiler": {
+      "batch_kwargs": {
+        "data_asset_name": "location_frequency",
+        "datasource": "my_postgres_db",
+        "schema": "public",
+        "table": "location_frequency"
+      },
+      "created_at": 1599155118.051507,
+      "created_by": "BasicSuiteBuilderProfiler"
+    },
+    "citations": [
+      {
+        "batch_kwargs": {
+          "data_asset_name": "location_frequency",
+          "datasource": "my_postgres_db",
+          "schema": "public",
+          "table": "location_frequency"
+        },
+        "batch_markers": {
+          "ge_load_time": "20200903T174517.847137Z"
+        },
+        "batch_parameters": null,
+        "citation_date": "20200903T174518.166853Z",
+        "comment": "BasicSuiteBuilderProfiler added a citation based on the current batch."
+      }
+    ],
+    "columns": {
+      "dropoff_location": {
+        "description": ""
+      },
+      "num_rides": {
+        "description": ""
+      },
+      "pickup_location": {
+        "description": ""
+      }
+    },
+    "great_expectations_version": "0.12.1",
+    "notes": {
+      "content": [
+        "_To add additional notes, edit the <code>meta.notes.content</code> field in the appropriate Expectation json file._"
+      ],
+      "format": "markdown"
+    }
+  }
+}

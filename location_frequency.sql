@@ -18,8 +18,7 @@ create table location_frequency as (
     select
         pickup_location,
         dropoff_location,
-        count(*) as num_rides,
-        'rides' as type_of_count
+        count(*) as num_rides
     from pickups_with_location
     group by pickup_location, dropoff_location
     order by pickup_location, dropoff_location

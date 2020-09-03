@@ -43,6 +43,34 @@
       "meta": {}
     },
     {
+      "expectation_type": "expect_column_kl_divergence_to_be_less_than",
+      "kwargs": {
+        "column": "dropoff_location",
+        "partition_object": {
+          "values": [
+            "Bronx",
+            "Brooklyn",
+            "EWR",
+            "Manhattan",
+            "Queens",
+            "Staten Island",
+            "Unknown"
+          ],
+          "weights": [
+            0.14285714285714285,
+            0.17857142857142858,
+            0.17857142857142858,
+            0.17857142857142858,
+            0.14285714285714285,
+            0.07142857142857142,
+            0.10714285714285714
+          ]
+        },
+        "threshold": 0.01
+      },
+      "meta": {}
+    },
+    {
       "expectation_type": "expect_column_values_to_not_be_null",
       "kwargs": {
         "column": "num_rides"
