@@ -39,7 +39,7 @@ datasources:
       port: '5432'
       username: ${DB_USER}
       password: ${DB_PASS}
-      database: ge_tutorials
+      database: demo
     data_asset_type:
       module_name: great_expectations.dataset
       class_name: SqlAlchemyDataset
