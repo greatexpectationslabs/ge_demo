@@ -3,7 +3,7 @@ name: PR Push
 on: pull_request
 
 jobs:
-  test-hosted-action:
+  great_expectations_validation:
     runs-on: ubuntu-latest
     steps:
 
