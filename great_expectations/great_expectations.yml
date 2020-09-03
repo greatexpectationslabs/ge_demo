@@ -15,7 +15,6 @@ config_version: 2.0
 # add a new datasource. Read more at https://docs.greatexpectations.io/en/latest/features/datasource.html
 datasources:
   data__dir:
-    class_name: PandasDatasource
     module_name: great_expectations.datasource
     batch_kwargs_generators:
       subdir_reader:
@@ -24,13 +23,27 @@ datasources:
     data_asset_type:
       module_name: great_expectations.dataset
       class_name: PandasDataset
+    class_name: PandasDatasource
   my_postgres_db:
-    class_name: SqlAlchemyDatasource
-    credentials: ${my_postgres_db}
     module_name: great_expectations.datasource
+    credentials: ${my_postgres_db}
     data_asset_type:
       module_name: great_expectations.dataset
       class_name: SqlAlchemyDataset
+    class_name: SqlAlchemyDatasource
+  rds_postgres_db:
+    module_name: great_expectations.datasource
+    credentials:
+      drivername: postgresql
+      host: ${DB_HOST}
+      port: '5432'
+      username: ${DB_USER}
+      password: ${DB_PASS}
+      database: ge_tutorials
+    data_asset_type:
+      module_name: great_expectations.dataset
+      class_name: SqlAlchemyDataset
+    class_name: SqlAlchemyDatasource
 config_variables_file_path: uncommitted/config_variables.yml
 
 # The plugins_directory will be added to your python path for custom modules
