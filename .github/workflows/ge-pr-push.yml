@@ -20,6 +20,7 @@ jobs:
         CHECKPOINTS: "locations.rds.chk"
         NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        DEBUG: true
       env:
         DB_HOST: ${{ secrets.DB_HOST }}
         DB_PASS: ${{ secrets.DB_PASS }}
@@ -50,7 +51,7 @@ jobs:
             issue_number: context.issue.number,
             owner: context.repo.owner,
             repo: context.repo.repo,
-            body: `Failed Great Expectations Checkpoint(s) \`${FAILED_CHECKPOINTS}\` detected for: ${process.env.GITHUB_SHA}.  Corresponding Data Docs have been generated and can be viewed [here](${process.env.URL}).`
+            body: `Failed Great Expectations Checkpoint(s) \`${process.env.FAILED_CHECKPOINTS}\` detected for: ${process.env.GITHUB_SHA}.  Corresponding Data Docs have been generated and can be viewed [here](${process.env.URL}).`
             })
       env:
         URL: ${{ steps.ge.outputs.docs_url }}
@@ -67,7 +68,7 @@ jobs:
             issue_number: context.issue.number,
             owner: context.repo.owner,
             repo: context.repo.repo,
-            body: `Passed Great Expectations Checkpoint(s) \`${PASSED_CHECKPOINTS}\` detected for: ${process.env.GITHUB_SHA}.  Corresponding Data Docs have been generated and can be viewed [here](${process.env.URL}).`
+            body: `Passed Great Expectations Checkpoint(s) \`${process.env.PASSED_CHECKPOINTS}\` detected for: ${process.env.GITHUB_SHA}.  Corresponding Data Docs have been generated and can be viewed [here](${process.env.URL}).`
             })
       env:
         URL: ${{ steps.ge.outputs.docs_url }}
