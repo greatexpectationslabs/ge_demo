@@ -29,7 +29,7 @@ jobs:
     - name: print env variables
       run: env
       env:
-        URL: ${{ steps.ge.outputs.NETLIFY_DOCS_URL }}
+        URL: ${{ steps.ge.outputs.netlify_docs_url }}
         PASSED_CHECKPOINTS: ${{ steps.ge.outputs.passing_checkpoints }}
         FAILED_CHECKPOINTS: ${{ steps.ge.outputs.failing_checkpoints }}
         GE_FLAG: "${{ steps.ge.outputs.checkpoint_failure_flag }}"
@@ -55,7 +55,7 @@ jobs:
             body: `Failed Great Expectations Checkpoint(s) \`${process.env.FAILED_CHECKPOINTS}\` detected for: ${process.env.GITHUB_SHA}.  Corresponding Data Docs have been generated and can be viewed [here](${process.env.URL}).`
             })
       env:
-        URL: ${{ steps.ge.outputs.NETLIFY_DOCS_URL }}
+        URL: ${{ steps.ge.outputs.netlify_docs_url }}
         FAILED_CHECKPOINTS: ${{ steps.ge.outputs.failing_checkpoints }}
     
     # If a checkpoint succeeds, still comment.
@@ -72,5 +72,5 @@ jobs:
             body: `Passed Great Expectations Checkpoint(s) \`${process.env.PASSED_CHECKPOINTS}\` detected for: ${process.env.GITHUB_SHA}.  Corresponding Data Docs have been generated and can be viewed [here](${process.env.URL}).`
             })
       env:
-        URL: ${{ steps.ge.outputs.NETLIFY_DOCS_URL }}
+        URL: ${{ steps.ge.outputs.netlify_docs_url }}
         PASSED_CHECKPOINTS: ${{ steps.ge.outputs.passing_checkpoints }}
