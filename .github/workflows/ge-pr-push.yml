@@ -20,7 +20,7 @@ jobs:
         CHECKPOINTS: "locations.rds.chk"
         NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        DEBUG: true
+        DEBUG: false
       env:
         DB_HOST: ${{ secrets.DB_HOST }}
         DB_PASS: ${{ secrets.DB_PASS }}
