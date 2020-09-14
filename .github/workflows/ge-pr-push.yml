@@ -7,6 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
+    - name: test warning message
+      run: echo "::warning::This is a test of a warning message."
       # Clone the contents of the repository
     - name: Copy Repository Contents
       uses: actions/checkout@main
