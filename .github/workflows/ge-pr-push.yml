@@ -1,6 +1,13 @@
 #Automatically Runs Great Expectation Checkpoints on every push to a PR, and provides links to hosted Data Docs if there an error.
 name: PR Push
-on: pull_request
+on: 
+  push:
+    paths:
+      - '**.sql'
+env:
+  DB_HOST: ${{ secrets.DB_HOST }}
+  DB_PASS: ${{ secrets.DB_PASS }}
+  DB_USER: ${{ secrets.DB_USER }} 
 
 jobs:
   great_expectations_validation:
@@ -12,6 +19,10 @@ jobs:
       # Clone the contents of the repository
     - name: Copy Repository Contents
       uses: actions/checkout@main
+    
+    - name: run sql query
+      run: |
+        PGPASSWORD=${DB_PASS} psql -h $DB_HOST -d demo -U $DB_USER -f location_frequency.sql
 
       # Run Great Expectations and deploy Data Docs to Netlify
     - name: Run Great Expectation Checkpoints
@@ -21,10 +32,7 @@ jobs:
         CHECKPOINTS: "locations.rds.chk"
         NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-      env:
-        DB_HOST: ${{ secrets.DB_HOST }}
-        DB_PASS: ${{ secrets.DB_PASS }}
-        DB_USER: ${{ secrets.DB_USER }} 
+
     
       # Comment on PR with link to deployed Data Docs
     - name: Comment on PR 
