@@ -3,7 +3,7 @@ name: PR Push
 on: 
   push:
     paths:
-      - '**.sql'
+    - '**.sql'
 env:
   DB_HOST: ${{ secrets.DB_HOST }}
   DB_PASS: ${{ secrets.DB_PASS }}
