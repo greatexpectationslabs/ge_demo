@@ -1,4 +1,4 @@
-drop table if exists pickups_with_location;
+drop table if exists pickups_with_location; 
 create table pickups_with_location as (
 
     select
