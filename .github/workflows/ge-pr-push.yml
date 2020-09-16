@@ -49,9 +49,7 @@ jobs:
                  owner: context.repo.owner,
                  repo: context.repo.repo,
                  body: msg 
-               })
-            } else {
-              //pass
+               });
             }
       env:
         URL: "${{ steps.ge.outputs.netlify_docs_url }}"
