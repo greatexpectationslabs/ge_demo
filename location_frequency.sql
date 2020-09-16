@@ -2,7 +2,7 @@ drop table if exists pickups_with_location;
 create table pickups_with_location as (
 
     select
-        t.pickup_datetime,
+        t.pickup_datetime, 
         t.passenger_count,
         z1.borough as pickup_location,
         z2.borough as dropoff_location
