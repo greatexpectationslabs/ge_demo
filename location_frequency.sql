@@ -3,7 +3,7 @@ create table pickups_with_location as (
 
     select
         t.pickup_datetime,
-        t.passenger_count,
+        t.passenger_count, 
         z1.borough as pickup_location,
         z2.borough as dropoff_location
     from yellow_tripdata_sample_2019_01 t
