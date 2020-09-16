@@ -1,7 +1,7 @@
 #Automatically Runs Great Expectation Checkpoints on every push to a PR, and provides links to hosted Data Docs if there an error.
 name: PR Push
 on: 
-  push:
+  pull_request:
     paths:
     - '**.sql'
 env:
