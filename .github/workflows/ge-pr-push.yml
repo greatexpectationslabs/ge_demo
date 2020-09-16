@@ -26,23 +26,27 @@ jobs:
         DB_PASS: ${{ secrets.DB_PASS }}
         DB_USER: ${{ secrets.DB_USER }} 
     
-    # If a checkpoint failed, comment on the PR with a link to the Data Docs hosted on Netlify.
-    - name: Comment on PR Upon Checkpoint Failure
-      if: steps.ge.outputs.checkpoint_failure_flag == '1'
+      # Comment on PR with link to deployed Data Docs
+    - name: Comment on PR 
+      if: ${{ always() }}
       uses: actions/github-script@v2
       with:
-        github-token: ${{secrets.GITHUB_TOKEN}}
+        github-token: ${{ secrets.GITHUB_TOKEN }}
         script: |
-            msg = `Failed Great Expectations checkpoint(s) \`${process.env.FAILED_CHECKPOINTS}\` detected for: ${process.env.SHA}.  Corresponding Data Docs have been generated and can be viewed [here](${process.env.URL}).`;
-
-            console.log(`Message to be emitted: ${msg}`);
-            github.issues.createComment({
-            issue_number: context.issue.number,
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            body: msg
-            })
+            if (process.env.FAILURE_FLAG == 1 ) {
+              msg = `Failed Great Expectations checkpoint(s) \`${process.env.FAILED_CHECKPOINTS}\` detected for: ${process.env.SHA}.  Corresponding Data Docs have been generated and can be viewed [here](${process.env.URL}).`;
+              console.log(`Message to be emitted: ${msg}`);
+              github.issues.createComment({
+                 issue_number: context.issue.number,
+                 owner: context.repo.owner,
+                 repo: context.repo.repo,
+                 body: msg 
+               })
+            } else {
+              //pass
+            }
       env:
         URL: "${{ steps.ge.outputs.netlify_docs_url }}"
         FAILED_CHECKPOINTS: ${{ steps.ge.outputs.failing_checkpoints }}
-        SHA: ${{ github.sha }}
+        SHA: ${{ steps.chatops.outputs.SHA }}
+        FAILURE_FLAG: ${{ steps.ge.outputs.checkpoint_failure_flag }}
