@@ -18,7 +18,7 @@ jobs:
     - name: Copy Repository Contents
       uses: actions/checkout@main
     
-    - name: run sql query
+    - name: Run SQL pipeline
       run: |
         PGPASSWORD=${DB_PASS} psql -h $DB_HOST -d demo -U $DB_USER -f location_frequency.sql
 
