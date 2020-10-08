@@ -1,0 +1,21 @@
+{
+  "data_asset_type": null,
+  "expectation_suite_name": "raw.taxi_zone_lookup.warning",
+  "expectations": [],
+  "meta": {
+    "citations": [
+      {
+        "batch_kwargs": {
+          "data_asset_name": "taxi_zone_lookup",
+          "datasource": "data__dir",
+          "path": "../data/taxi_zone_lookup.csv"
+        },
+        "batch_markers": null,
+        "batch_parameters": null,
+        "citation_date": "20201008T153057.201021Z",
+        "comment": "New suite added via CLI"
+      }
+    ],
+    "great_expectations_version": "0.12.2"
+  }
+}
