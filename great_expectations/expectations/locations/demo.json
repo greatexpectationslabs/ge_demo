@@ -128,7 +128,7 @@
     "great_expectations_version": "0.12.1",
     "notes": {
       "content": [
-        "_To add additional notes, edit the <code>meta.notes.content</code> field in the appropriate Expectation json file._"
+        "This suite describes the **aggregate data** that feeds our **dashboards and analytics**."
       ],
       "format": "markdown"
     }
