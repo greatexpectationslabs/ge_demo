@@ -8,7 +8,7 @@ create table pickups_with_location as (
         z2.borough as dropoff_location
     from yellow_tripdata_sample_2019_01 t
     left join taxi_zone_lookup z1 on t.pickup_location_id = z1.location_id
-    left join taxi_zone_lookup z2 on t.dropoff_location_id = z2.location_id
+    left join taxi_zone_lookup z1 on t.dropoff_location_id = z1.location_id
 
 );
 
