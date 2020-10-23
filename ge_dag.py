@@ -37,3 +37,42 @@ ge_batch_kwargs_pass = GreatExpectationsOperator(
     },
     dag=dag
 )
+
+ge_batch_kwargs_list_pass = GreatExpectationsOperator(
+    task_id='ge_batch_kwargs_list_pass',
+    assets_to_validate=[
+        {
+            'batch_kwargs': {
+                'path': '/Users/sam/code/ge_demo/data/yellow_tripdata_sample_2019-01.csv',
+                'datasource': 'data__dir'
+            },
+            'expectation_suite_name': 'taxi.demo'
+        }
+    ],
+    dag=dag
+)
+
+ge_checkpoint_pass_root_dir = GreatExpectationsOperator(
+    task_id='ge_checkpoint_pass_root_dir',
+    run_id='ge_airflow_run',
+    checkpoint_name='taxi.pass.chk',
+    data_context_root_dir='/Users/sam/code/ge_demo/great_expectations',
+    dag=dag
+)
+
+ge_wrong_root_dir = GreatExpectationsOperator(
+    task_id='ge_wrong_root_dir',
+    run_id='ge_airflow_run',
+    checkpoint_name='taxi.pass.chk',
+    data_context_root_dir='/Users/sam/code/',
+    dag=dag
+)
+
+ge_too_many_args = GreatExpectationsOperator(
+    task_id='ge_too_many_args',
+    run_id='ge_airflow_run',
+    checkpoint_name='taxi.pass.chk',
+    batch_kwargs={},
+    expectation_suite_name='my_suite',
+    dag=dag
+)
