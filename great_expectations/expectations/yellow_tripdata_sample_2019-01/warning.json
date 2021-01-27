@@ -1,0 +1,36 @@
+{
+  "data_asset_type": "Dataset",
+  "expectation_suite_name": "yellow_tripdata_sample_2019-01.warning",
+  "expectations": [
+    {
+      "expectation_type": "expect_table_column_count_to_equal",
+      "kwargs": {
+        "value": 18
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_table_row_count_to_equal",
+      "kwargs": {
+        "value": 10000
+      },
+      "meta": {}
+    }
+  ],
+  "meta": {
+    "citations": [
+      {
+        "batch_kwargs": {
+          "data_asset_name": "yellow_tripdata_sample_2019-01",
+          "datasource": "data__dir",
+          "path": "/Users/sam/code/ge_demo/great_expectations/../data/yellow_tripdata_sample_2019-01.csv"
+        },
+        "batch_markers": null,
+        "batch_parameters": null,
+        "citation_date": "20201118T113154.588931Z",
+        "comment": "New suite added via CLI"
+      }
+    ],
+    "great_expectations_version": "0.12.7"
+  }
+}
