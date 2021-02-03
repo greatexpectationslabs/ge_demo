@@ -1,6 +1,8 @@
 # ge_demo repo - FOR INTERNAL USE ONLY, this is UNSUPPORTED for public use
 
-A small demo using NYC taxi data. **Experimental, the GE core team uses this to test out things**. No guarantee that this actually works consistently. The full demo-able and maintained webinar material is in the ge_tutorials repo.
+A small demo using NYC taxi data. **Experimental, the GE core team uses this to test out things**. No guarantee that this actually works consistently. The full demo-able and maintained webinar material is in the superconductive/ge_tutorials repo.
+
+**The postgres database** actually lives in the superconductive/ge_tutorials repo in the getting started tutorial. You can run the docker container with that PG database and add the creds to run the expectations and checkpoints configured here. Or just use the getting_started tutorial repo content itself. 
 
 ## Set up
 
