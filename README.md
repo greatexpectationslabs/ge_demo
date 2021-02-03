@@ -1,6 +1,6 @@
-# ge_demo repo
+# ge_demo repo - FOR INTERNAL USE ONLY, this is UNSUPPORTED for public use
 
-A small demo using NYC taxi data. **Experimental**. The full demo-able webinar material is in ge_tutorials.
+A small demo using NYC taxi data. **Experimental, the GE core team uses this to test out things**. No guarantee that this actually works consistently. The full demo-able and maintained webinar material is in the ge_tutorials repo.
 
 ## Set up
 
